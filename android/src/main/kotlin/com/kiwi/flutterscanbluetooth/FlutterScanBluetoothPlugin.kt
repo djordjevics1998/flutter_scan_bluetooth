@@ -96,7 +96,7 @@ class FlutterScanBluetoothPlugin
     }
 
     private fun onViewDestroy() {
-        if(adapter == null) return;
+        if(adapter == null && onPermissionRefused == null) return;
         startPermissionValidation({
             if (adapter!!.isDiscovering) {
                 stopScan(null)
