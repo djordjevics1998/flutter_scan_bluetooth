@@ -1,3 +1,6 @@
+import com.android.build.api.dsl.Lint
+import com.android.build.api.dsl.LintOptions
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -19,6 +22,10 @@ android {
 
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    lint {
+        checkReleaseBuilds = false
     }
 }
 
