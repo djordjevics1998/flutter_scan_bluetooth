@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.Lint
 import com.android.build.api.dsl.LintOptions
+import org.gradle.internal.declarativedsl.parsing.main
 
 plugins {
     id("com.android.library")
@@ -9,6 +10,8 @@ plugins {
 android {
     namespace = "com.kiwi.flutterscanbluetooth"
     compileSdk = 35
+
+    sourceSets["main"].java.srcDirs("src/main/kotlin")
 
     defaultConfig {
         minSdk = 21
